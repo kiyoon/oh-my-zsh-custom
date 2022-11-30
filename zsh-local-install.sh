@@ -4,7 +4,7 @@
 # Install zsh under ~/.local/bin/zsh
 
 INSTALL_DIR="$HOME/.local"
-cd "$HOME/bin"
+mkdir -p "$HOME/bin" && cd "$HOME/bin"
 
 wget ftp://ftp.gnu.org/gnu/ncurses/ncurses-6.1.tar.gz
 tar xf ncurses-6.1.tar.gz
