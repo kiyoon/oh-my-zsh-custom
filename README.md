@@ -21,10 +21,11 @@ source <(curl -sS https://raw.githubusercontent.com/kiyoon/oh-my-zsh-custom/mast
 Add the lines below to your `~/.bashrc` (if you don't have root permission and can't do `chsh`):
 
 ```bash
+export PATH="$HOME/.local/bin:$PATH"
 if [[ ($- == *i*) ]];
 then
- export SHELL=.local/bin/zsh
- exec .local/bin/zsh -l
+ export SHELL=zsh
+ exec zsh -l
 fi
 ```
 
