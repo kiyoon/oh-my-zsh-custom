@@ -1,9 +1,31 @@
+# My ZSH Custom for local/SSH users
+
+I develop often on remote servers that I don't have `sudo` permission. This awesome zsh settings allow you to install **locally, without root permission**.
+
+
 ## Setup
+
+Install zsh (with root):
+
+```bash
+sudo apt install zsh
+chsh -s $(which zsh)
+```
 
 Install zsh locally (if you can't `sudo apt install zsh`):
 
 ```bash
 source <(curl -sS https://raw.githubusercontent.com/kiyoon/oh-my-zsh-custom/master/zsh-local-install.sh)
+```
+
+Add the lines below to your `~/.bashrc` (if you don't have root permission and can't do `chsh`):
+
+```bash
+if [[ ($- == *i*) ]];
+then
+ export SHELL=.local/bin/zsh
+ exec .local/bin/zsh -l
+fi
 ```
 
 Install oh-my-zsh:
@@ -38,7 +60,7 @@ pip3 install --user thefuck			# fix last command
 conda config --set changeps1 False	# suppress conda environment name in favour of Starship
 ```
 
-(Optional) If you have a root permission:
+(Optional) Apps when you have root permission:
 
 ```zsh
 sudo apt update -y
