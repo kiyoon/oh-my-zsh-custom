@@ -1,24 +1,44 @@
 ## Setup
 
+Install zsh:
+
+```bash
+
+```
+
 Install oh-my-zsh:
 
 ```zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+Clone this repo (recurse submodules):
+
+```zsh
+mkdir ~/bin
+git clone --recurse-submodules https://github.com/kiyoon/oh-my-zsh-custom ~/bin/oh-my-zsh-custom
+mv ~/.zshrc ~/.zshrc.bak
+ln -s ~/bin/oh-my-zsh-custom/.zshrc ~/.zshrc
+```
+
+Install apps:
+
 ```zsh
 ##### Starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" sh -b "$HOME/.local/bin" -y
 
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-git clone https://github.com/conda-incubator/conda-zsh-completion ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/conda-zsh-completion
+##### zoxide
+curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+
+##### fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 
 pip3 install --user pygments		# colorize (ccat)
 pip3 install --user thefuck			# fix last command
 conda config --set changeps1 False	# suppress conda environment name in favour of Starship
 ```
 
-If you have a root permission:
+(Optional) If you have a root permission:
 
 ```zsh
 sudo apt update -y
