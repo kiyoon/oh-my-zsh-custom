@@ -1,9 +1,9 @@
 ## Setup
 
-Install zsh:
+Install zsh locally (if you can't `sudo apt install zsh`):
 
 ```bash
-
+source <(curl -sS https://raw.githubusercontent.com/kiyoon/oh-my-zsh-custom/master/zsh-local-install.sh)
 ```
 
 Install oh-my-zsh:
@@ -55,3 +55,13 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 gh auth login
 gh alias set r repo
 ```
+
+## Useful commands
+
+Update all plugins:
+
+```zsh
+cd $ZSH_CUSTOM
+git submodule update --remote
+```
+
