@@ -74,6 +74,8 @@ plugins=(
 	git
 	vi-mode
 	zsh-autosuggestions
+	zsh-syntax-highlighting
+	conda-zsh-completion
 	web-search				# google, ddg, ...
 	copypath
 	copyfile
@@ -84,7 +86,6 @@ plugins=(
 	docker
 	encode64
 	extract
-	conda-zsh-completion
 	fancy-ctrl-z			# Ctrl+z again to fg
 	dirhistory				# Alt+Left/Right/Up to navigate dir history
 	jsontools				# pp_json
