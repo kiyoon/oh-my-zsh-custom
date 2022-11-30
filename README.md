@@ -24,7 +24,7 @@ Add the lines below to your `~/.bashrc` (if you don't have root permission and c
 export PATH="$HOME/.local/bin:$PATH"
 if [[ ($- == *i*) ]];
 then
- export SHELL=zsh
+ export SHELL=$(which zsh)
  exec zsh -l
 fi
 ```
