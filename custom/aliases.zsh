@@ -12,6 +12,11 @@ if (( $+commands[nvim] )); then
 	alias vimdiff='nvim -d'
 fi
 
+if (( $+commands[gh] )); then
+	alias ghr='gh repo'
+	alias ghb='gh browse'
+fi
+
 alias src='omz reload'
 
 alias ca='conda activate'
