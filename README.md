@@ -48,7 +48,10 @@ Install apps:
 
 ```zsh
 ##### Starship
+mkdir ~/.local/bin -p
+mkdir ~/.config -p
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" sh -b "$HOME/.local/bin" -y
+wget https://gist.githubusercontent.com/kiyoon/53dae21ecd6c35c24c88bcce88b89d27/raw/21e8e98917a08a9cb6d1ab85c0fb6fe39b4c28b5/starship.toml -P ~/.config
 
 ##### zoxide
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
