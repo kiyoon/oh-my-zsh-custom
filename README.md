@@ -48,7 +48,10 @@ Install apps:
 
 ```zsh
 ##### Starship
+mkdir ~/.local/bin -p
+mkdir ~/.config -p
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" sh -b "$HOME/.local/bin" -y
+wget https://gist.githubusercontent.com/kiyoon/53dae21ecd6c35c24c88bcce88b89d27/raw/21e8e98917a08a9cb6d1ab85c0fb6fe39b4c28b5/starship.toml -P ~/.config
 
 ##### zoxide
 curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
@@ -59,6 +62,20 @@ git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 pip3 install --user pygments		# colorize (ccat)
 pip3 install --user thefuck			# fix last command
 conda config --set changeps1 False	# suppress conda environment name in favour of Starship
+```
+
+
+(Optional) Additional settings:
+
+```zsh
+##### Conda
+conda config --set auto_activate_base false
+##### git
+git config --global user.email "yoonkr33@gmail.com"
+git config --global user.name "Kiyoon Kim"
+git config --global core.editor nvim
+git config --global pull.rebase false
+git config --global url.ssh://git@github.com/.insteadOf https://github.com/
 ```
 
 (Optional) Apps when you have root permission:
