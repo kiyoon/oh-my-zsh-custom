@@ -73,7 +73,7 @@ ZSH_CUSTOM="$HOME/bin/oh-my-zsh-custom/custom"
 plugins=(
 	git
 	vi-mode
-	zsh-autosuggestions
+#	zsh-autosuggestions
 	zsh-syntax-highlighting
 	conda-zsh-completion
 	web-search				# google, ddg, ...
@@ -97,6 +97,7 @@ plugins=(
 	fzf
 	zoxide
 	thefuck
+	ripgrep
 )
 
 VI_MODE_RESET_PROMPT_ON_MODE_CHANGE=true
