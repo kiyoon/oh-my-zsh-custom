@@ -22,3 +22,5 @@ alias src='omz reload'
 alias ca='conda activate'
 alias ns='nvidia-smi'
 alias rb='gio trash'
+
+alias ghremote="git remote add origin https://github.com/$1"
