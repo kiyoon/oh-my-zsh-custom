@@ -2,6 +2,13 @@
 
 INSTALL_DIR="$HOME/.local"
 
+
+if command -v npm &> /dev/null
+	if ! command -v fd &> /dev/null
+		npm install -g fd-find
+	fi
+fi
+
 if ! command -v tig &> /dev/null
 then
     if [ -z "$HOME/.local/include/ncurses/curses.h" ]
