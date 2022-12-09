@@ -4,7 +4,9 @@ INSTALL_DIR="$HOME/.local"
 
 
 if command -v npm &> /dev/null
+then
 	if ! command -v fd &> /dev/null
+	then
 		npm install -g fd-find
 	fi
 fi
