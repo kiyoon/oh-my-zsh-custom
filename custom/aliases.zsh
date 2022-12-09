@@ -24,7 +24,18 @@ alias cc='conda create -n'
 alias ns='nvidia-smi'
 alias rb='gio trash'
 
-alias ghremote="git remote add origin https://github.com/$1"
+ghremote() {
+	if [ $# -eq 1 ]; then
+		echo "git remote add origin https://github.com/$1"
+		git remote add origin "https://github.com/$1"
+	elif [ $# -eq 2 ]; then
+		echo "git remote add $1 https://github.com/$2"
+		git remote add "$1" "https://github.com/$2"
+	else
+		echo "Usage: ghremote [remotename=origin] [username]/[reponame]"
+		return 1
+	fi
+}
 
 
 envpull() {
