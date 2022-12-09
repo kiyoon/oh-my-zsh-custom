@@ -41,7 +41,8 @@ ghremote() {
 envpull() {
 	git -C ~/bin/vimrc4ubuntu pull
 	~/bin/vimrc4ubuntu/install-linux.sh
-	nvim +qall
+	nvim +PlugInstall +qall
+	nvim +PlugUpdate +qall
 
 	git -C ~/bin/tmux-conf pull
 	~/.tmux/plugins/tpm/scripts/install_plugins.sh
