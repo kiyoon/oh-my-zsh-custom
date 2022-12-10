@@ -75,3 +75,17 @@ then
 else
     echo "gh already install at $(which gh). Skipping.."
 fi
+
+
+if ! command -v jq &> /dev/null
+then
+	curl -s https://api.github.com/repos/stedolan/jq/releases/latest \
+	| grep "browser_download_url.*jq-linux64" \
+	| cut -d : -f 2,3 \
+	| tr -d \" \
+	| wget -qi - -O "$INSTALL_DIR/bin/jq"
+	chmod +x "$INSTALL_DIR/bin/jq"
+	echo "jq install at $(which jq)"
+else
+	echo "jq already install at $(which jq). Skipping.."
+fi
