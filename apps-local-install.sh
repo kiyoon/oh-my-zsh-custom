@@ -3,12 +3,14 @@
 INSTALL_DIR="$HOME/.local"
 
 
-if command -v npm &> /dev/null
+if ! command -v npm &> /dev/null
 then
-	if ! command -v fd &> /dev/null
-	then
-		npm install -g fd-find
-	fi
+	curl -sL install-node.vercel.app/lts | bash -s -- --prefix="$HOME/.local" -y
+fi
+
+if ! command -v fd &> /dev/null
+then
+	npm install -g fd-find
 fi
 
 if ! command -v tig &> /dev/null
