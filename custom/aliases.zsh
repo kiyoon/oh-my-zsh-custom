@@ -7,9 +7,12 @@ if (( $+commands[exa] )); then
 fi
 
 if (( $+commands[nvim] )); then
+	alias v=nvim
 	alias vi=nvim
 	alias vim=nvim
 	alias vimdiff='nvim -d'
+	alias diffview='nvim +DiffviewOpen'
+	alias dv='nvim +DiffviewOpen'
 fi
 
 if (( $+commands[gh] )); then
