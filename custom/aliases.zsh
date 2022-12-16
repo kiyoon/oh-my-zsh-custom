@@ -18,6 +18,10 @@ fi
 if (( $+commands[gh] )); then
 	alias ghr='gh repo'
 	alias ghb='gh browse'
+	alias ghc='gh repo clone'
+	ghck() {
+		gh repo clone kiyoon/$1
+	}
 fi
 
 alias src='omz reload'
