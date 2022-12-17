@@ -1,12 +1,24 @@
 ghremote() {
 	if [ $# -eq 1 ]; then
-		echo "git remote add origin https://github.com/$1"
-		git remote add origin "https://github.com/$1"
+		if [[ "$1" = *"/"* ]]; then
+			reponame="$1"
+		else
+			reponame=kiyoon/"$1"
+		fi
+		echo "git remote add origin https://github.com/$reponame"
+		git remote add origin "https://github.com/$reponame"
 	elif [ $# -eq 2 ]; then
-		echo "git remote add $1 https://github.com/$2"
-		git remote add "$1" "https://github.com/$2"
+		if [[ "$2" = *"/"* ]]; then
+			reponame="$2"
+		else
+			reponame=kiyoon/"$2"
+		fi
+		echo "git remote add $1 https://github.com/$reponame"
+		git remote add "$1" "https://github.com/$reponame"
 	else
 		echo "Usage: ghremote [remotename=origin] [username]/[reponame]"
+		echo "Example: ghremote kiyoon/awesome"
+		echo "Example2: ghremote awesome (kiyoon can be skipped)"
 		return 1
 	fi
 }
