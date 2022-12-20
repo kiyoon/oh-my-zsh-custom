@@ -31,3 +31,8 @@ alias cc='conda create -n'
 alias ns='nvidia-smi'
 alias rb='gio trash'
 
+# slurm
+alias sq='squeue -u $USER'
+idamnii() {
+        srun --time=0-05:00:00 --gres=gpu:$2 --partition=PGR-Standard -w damnii$1 --cpus-per-task=$3 --pty bash
+}
