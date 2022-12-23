@@ -36,3 +36,5 @@ alias sq='squeue -u $USER'
 idamnii() {
         srun --time=0-05:00:00 --gres=gpu:$2 --partition=PGR-Standard -w damnii$1 --cpus-per-task=$3 --pty bash
 }
+
+alias stylua='npx @johnnymorganz/stylua-bin'
