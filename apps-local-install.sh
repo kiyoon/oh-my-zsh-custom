@@ -70,7 +70,7 @@ then
     | cut -d : -f 2,3 \
     | tr -d \" \
     | wget -qi - -O - | tar xvzf - -C $TEMPDIR --strip-components=1 
-    rm "$TEMPDIR/LICENSE"
+    \rm "$TEMPDIR/LICENSE"
     rsync -av "$TEMPDIR/" "$INSTALL_DIR/"
     echo "gh install at $(which gh)"
     \rm -rf "$TEMPDIR"
@@ -91,3 +91,16 @@ then
 else
 	echo "jq already install at $(which jq). Skipping.."
 fi
+
+if ! command -v gotop &> /dev/null
+then
+	curl -s https://api.github.com/repos/xxxserxxx/gotop/releases/latest \
+		| grep "browser_download_url.*_linux_amd64.tgz" \
+		| cut -d : -f 2,3 \
+		| tr -d \" \
+		| wget -qi - -O - | tar xzf - -C "$INSTALL_DIR/bin"
+	echo "gotop install at $(which gotop)"
+else
+	echo "gotop already install at $(which gotop). Skipping.."
+fi
+
