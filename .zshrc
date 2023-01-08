@@ -72,7 +72,8 @@ ZSH_CUSTOM="$HOME/bin/oh-my-zsh-custom/custom"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
 	git
-	vi-mode
+	# vi-mode
+	zsh-vi-mode
 #	zsh-autosuggestions
 	zsh-syntax-highlighting
 	conda-zsh-completion
